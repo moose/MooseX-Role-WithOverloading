@@ -1,3 +1,6 @@
+ * Fix bug causing attributes to get lost if they were added to a role
+   before composing a ::WithOverloading role onto it.
+
 0.09  Mon, 03 Jan 2011 17:37:34 +0100
   * get_package_symbol no longer autovififies - use get_or_add_package_symbol
     instead (doy).
