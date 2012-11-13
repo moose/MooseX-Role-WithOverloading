@@ -1,3 +1,5 @@
+ * Remove use of MooseX::Types to allow Catalyst to work on perl 5.8.5
+   RT#77100, RT#81124
  * Fix bug causing attributes to get lost if they were added to a role
    before composing a ::WithOverloading role onto it.
 

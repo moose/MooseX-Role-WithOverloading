@@ -3,7 +3,6 @@ package MooseX::Role::WithOverloading::Meta::Role::Application;
 
 use Moose::Role 1.15;
 use overload ();
-use MooseX::Types::Moose qw/ArrayRef Str/;
 use namespace::autoclean;
 
 requires 'apply_methods';
@@ -16,7 +15,7 @@ Returns an arrayref of the names of overloaded operations
 
 has overload_ops => (
     is      => 'ro',
-    isa     => ArrayRef[Str],
+    isa     => 'ArrayRef[Str]',
     builder => '_build_overload_ops',
 );
 
@@ -82,3 +81,4 @@ sub apply_overloading {
 }
 
 1;
+
