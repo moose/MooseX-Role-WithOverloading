@@ -1,3 +1,5 @@
+ * Fix dependency issues from AutoPrereqs. RT#81145
+
 0.10  Tue, 13 Nov 2012 00:41:00 +0000
  * Remove use of MooseX::Types to allow Catalyst to work on perl 5.8.5
    RT#77100, RT#81124
