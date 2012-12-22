@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 
-use Test::More tests => 15;
+use Test::More tests => 16;
+use Test::NoWarnings 1.04 ':early';
 use overload ();
 
 use lib 't/lib';
