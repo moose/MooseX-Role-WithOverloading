@@ -13,3 +13,4 @@ Debian*
 README
 MooseX-Role-WithOverloading-*
 *.bs
+*.c
