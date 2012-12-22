@@ -3,8 +3,7 @@ use warnings;
 use Test::More 0.88;
 use overload ();
 
-use FindBin;
-use lib "$FindBin::Bin/lib";
+use lib 't/lib';
 
 BEGIN { use_ok('ClassWithCombiningRole') }
 
