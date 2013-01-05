@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.12      2013-01-05 12:10:02 PST-0800
           - Bump dependency on namespace::autoclean (RT#69313)
 
 0.11      2012-11-17 22:09:00 +0000
