@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.13      2013-01-07 20:59:07 PST-0800
           - Resolve failure reports in 5.17.* due to changes in SVf_AMAGIC
 
 0.12      2013-01-05 12:10:02 PST-0800
