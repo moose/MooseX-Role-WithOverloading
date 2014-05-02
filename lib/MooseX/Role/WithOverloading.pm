@@ -63,8 +63,8 @@ sub init_meta {
 =head1 DESCRIPTION
 
 MooseX::Role::WithOverloading allows you to write a L<Moose::Role> which
-defines overloaded operators and allows those operator overloadings to be
-composed into the classes/roles/instances it's compiled to, while plain
+defines overloaded operators and allows those overload methods to be
+composed into the classes/roles/instances it's compiled to, where plain
 L<Moose::Role>s would lose the overloading.
 
 =begin Pod::Coverage
