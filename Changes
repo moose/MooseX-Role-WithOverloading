@@ -2,10 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
-0.13      2013-01-07 20:59:07 PST-0800
+0.13      2013-01-08 04:59:07Z
           - Resolve failure reports in 5.17.* due to changes in SVf_AMAGIC
 
-0.12      2013-01-05 12:10:02 PST-0800
+0.12      2013-01-05 20:10:02Z
           - Bump dependency on namespace::autoclean (RT#69313)
 
 0.11      2012-11-17 22:09:00 +0000
@@ -42,7 +42,7 @@ Revision history for {{$dist->name}}
 0.03      2009-11-20 07:57:25 +0100
           - Make ToInstance application work on perl older than 5.8.9.
 
-0.02      2009-10-11 08:37:43 CEST 2009
+0.02      2009-10-11 08:37:43 +0100
           - Fix missing dependency on MooseX::Types (Closes: RT#50386).
 
 0.01      2009-10-07 00:22:14 +0200
