@@ -12,7 +12,12 @@ use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToInstance'
 
 use namespace::clean;
 
-XSLoader::load(__PACKAGE__, our $VERSION);
+XSLoader::load(
+    __PACKAGE__,
+    $MooseX::Role::WithOverloading::{VERSION}
+    ? ${ $MooseX::Role::WithOverloading::{VERSION} }
+    : ()
+);
 
 Moose::Exporter->setup_import_methods(also => 'Moose::Role');
 
