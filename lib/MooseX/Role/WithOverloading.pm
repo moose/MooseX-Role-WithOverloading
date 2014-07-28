@@ -65,10 +65,4 @@ defines overloaded operators and allows those overload methods to be
 composed into the classes/roles/instances it's compiled to, where plain
 L<Moose::Role>s would lose the overloading.
 
-=begin Pod::Coverage
-
-init_meta
-
-=end Pod::Coverage
-
 =cut
