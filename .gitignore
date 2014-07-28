@@ -1,6 +1,13 @@
+!/.gitignore
 /.ackrc
 /.build/
-!/.gitignore
 /.latest
-/MooseX-Role-WithOverloading-*/
+/MYMETA.json
+/MYMETA.yml
+/Makefile
 /MooseX-Role-WithOverloading-*.tar.gz
+/MooseX-Role-WithOverloading-*/
+/WithOverloading.c
+/WithOverloading.o
+/blib/
+/pm_to_blib
