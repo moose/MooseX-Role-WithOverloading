@@ -4,6 +4,7 @@ Revision history for {{$dist->name}}
           - line numbers in shipped code are now almost the same (within 3) as
             the repository source, for easier debugging
           - repository migrated to the github moose organization
+          - unneeded init_meta method removed (Dave Rolsky)
 
 0.13      2013-01-08 04:59:07Z
           - Resolve failure reports in 5.17.* due to changes in SVf_AMAGIC
