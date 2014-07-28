@@ -32,6 +32,8 @@ Moose::Exporter->setup_import_methods(
 
 1;
 
+=for stopwords metaclasses
+
 =head1 SYNOPSIS
 
     package MyRole;
