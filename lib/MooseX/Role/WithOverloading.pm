@@ -1,5 +1,6 @@
 package MooseX::Role::WithOverloading;
 # ABSTRACT: Roles which support overloading
+# KEYWORDS: moose extension role operator overload overloading
 
 use XSLoader;
 use Moose::Role ();
