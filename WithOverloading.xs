@@ -15,7 +15,7 @@ S_reset_amagic (pTHX_ SV *rv, const bool on)
     MAGIC *mg;
 
     if (SvMAGICAL (target) && (mg = mg_find (target, PERL_MAGIC_backref))) {
-        /* Back referneces also need to be found, but aren't part of the target's reference count. */
+        /* Back references also need to be found, but aren't part of the target's reference count. */
         how_many += 1 + av_len ((AV *)mg->mg_obj);
     }
 
