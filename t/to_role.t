@@ -28,27 +28,27 @@ is($str, 'foo');
 
 # These tests failed on 5.18+ without some fixes to the MXRWO internals
 {
-    package Role1;
+    package MyRole1;
     use MooseX::Role::WithOverloading;
     use overload q{""} => '_stringify';
     sub _stringify { __PACKAGE__ };
 }
 
 {
-    package Role2;
+    package MyRole2;
     use Moose::Role;
-    with 'Role1';
+    with 'MyRole1';
 }
 
 {
     package Class1;
     use Moose;
-    with 'Role2';
+    with 'MyRole2';
 }
 
 is(
     Class1->new . q{},
-    'Role1',
+    'MyRole1',
     'stringification overloading is passed through all roles'
 );
 
