@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-use Test::More tests => 10;
-use Test::NoWarnings 1.04 ':early';
+use Test::More 0.96;
+use Test::Warnings;
 use overload ();
 
 use lib 't/lib';
@@ -23,3 +23,4 @@ is($foo->message, 'foo');
 my $str = "${foo}";
 is($str, 'foo');
 
+done_testing();
