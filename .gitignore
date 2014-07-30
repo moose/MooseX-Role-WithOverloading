@@ -7,6 +7,7 @@
 /Makefile
 /MooseX-Role-WithOverloading-*.tar.gz
 /MooseX-Role-WithOverloading-*/
+/WithOverloading.bs
 /WithOverloading.c
 /WithOverloading.o
 /blib/

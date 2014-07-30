@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-use Test::More tests => 13;
-use Test::NoWarnings 1.04 ':early';
+use Test::More 0.96;
+use Test::Warnings;
 use overload ();
 
 use lib 't/lib';
@@ -26,3 +26,30 @@ is($foo->message, 'foo');
 my $str = "${foo}";
 is($str, 'foo');
 
+# These tests failed on 5.18+ without some fixes to the MXRWO internals
+{
+    package MyRole1;
+    use MooseX::Role::WithOverloading;
+    use overload q{""} => '_stringify';
+    sub _stringify { __PACKAGE__ };
+}
+
+{
+    package MyRole2;
+    use Moose::Role;
+    with 'MyRole1';
+}
+
+{
+    package Class1;
+    use Moose;
+    with 'MyRole2';
+}
+
+is(
+    Class1->new . q{},
+    'MyRole1',
+    'stringification overloading is passed through all roles'
+);
+
+done_testing();

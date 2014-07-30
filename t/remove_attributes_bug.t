@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
-use Test::NoWarnings 1.04 ':early';
+use Test::More 0.96;
+use Test::Warnings;
 
 {
     package OverloadingRole;
@@ -38,3 +38,4 @@ is("$i", 'moo', 'overloading works');
 can_ok($i, 'hitid' );
 is($i->hitid, 21, 'Attribute works');
 
+done_testing();
