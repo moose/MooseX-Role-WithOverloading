@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.14      2014-07-30 20:05:32Z
           - Fixed a bug with Perl 5.18+ that caused this module to simply blow
             up with an error like "Use of uninitialized value in subroutine
             entry at .../Class/MOP/Package.pm ..." (Dave Rolsky)
