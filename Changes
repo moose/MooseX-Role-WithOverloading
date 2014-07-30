@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - Fixed a bug with Perl 5.18+ that caused this module to simply blow
+            up with an error like "Use of uninitialized value in subroutine
+            entry at .../Class/MOP/Package.pm ..." (Dave Rolsky)
           - Line numbers in shipped code are now almost the same (within 3) as
             the repository source, for easier debugging
           - Repository migrated to the github moose organization

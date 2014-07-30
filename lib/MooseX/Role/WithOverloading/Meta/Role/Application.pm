@@ -46,11 +46,15 @@ sub apply_overloading {
     my ($self, $role, $other) = @_;
     return unless overload::Overloaded($role->name);
 
-    # overloading predicate method
-    $other->add_package_symbol('&()' => $role->get_package_symbol('&()'));
-    # fallback value
-    $other->add_package_symbol('$()' => $role->get_package_symbol('$()'))
-        if $role->has_package_symbol('$()');
+    # &(( indicates that overloading is turned on with Perl 5.18+. &() does
+    # this in earlier perls. $() stores the fallback value if one was set.
+    for my $sym (qw{ &(( &() $() }) {
+        # Simply checking ->has_package_symbol doesn't work. With 5.18+, a
+        # package may have &() and $() symbols but they may be undef.
+        my $ref = $role->get_package_symbol($sym);
+        $other->add_package_symbol($sym => $ref)
+            if defined $ref;
+    }
 
     # register with magic by touching (changes to SVf_AMAGIC removed %OVERLOAD in 5.17.0)
     $other->get_or_add_package_symbol('%OVERLOAD')->{dummy}++ if $^V < 5.017000;
