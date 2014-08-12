@@ -5,7 +5,6 @@ package MooseX::Role::WithOverloading;
 use XSLoader;
 use Moose::Role ();
 use Moose::Exporter;
-use Moose::Util::MetaRole;
 use aliased 'MooseX::Role::WithOverloading::Meta::Role', 'MetaRole';
 use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToClass';
 use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToRole';
