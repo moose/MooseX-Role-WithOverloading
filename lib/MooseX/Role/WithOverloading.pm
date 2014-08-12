@@ -2,7 +2,6 @@ package MooseX::Role::WithOverloading;
 # ABSTRACT: Roles which support overloading
 # KEYWORDS: moose extension role operator overload overloading
 
-use XSLoader;
 use Moose::Role ();
 use Moose::Exporter;
 use aliased 'MooseX::Role::WithOverloading::Meta::Role', 'MetaRole';
@@ -12,22 +11,33 @@ use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToInstance'
 
 use namespace::clean;
 
-XSLoader::load(
-    __PACKAGE__,
-    $MooseX::Role::WithOverloading::{VERSION}
-    ? ${ $MooseX::Role::WithOverloading::{VERSION} }
-    : ()
-);
+# this functionality is built-in, starting with Moose 2.1300
+my $has_core_support = eval { Moose->VERSION('2.1300'); 1 };
 
-Moose::Exporter->setup_import_methods(
-    also           => 'Moose::Role',
-    role_metaroles => {
-        role                    => [MetaRole],
-        application_to_class    => [ToClass],
-        application_to_role     => [ToRole],
-        application_to_instance => [ToInstance],
-    },
-);
+if ($has_core_support)
+{
+    Moose::Exporter->setup_import_methods(also => 'Moose::Role');
+}
+else
+{
+    require XSLoader;
+    XSLoader::load(
+        __PACKAGE__,
+        $MooseX::Role::WithOverloading::{VERSION}
+        ? ${ $MooseX::Role::WithOverloading::{VERSION} }
+        : ()
+    );
+
+    Moose::Exporter->setup_import_methods(
+        also           => 'Moose::Role',
+        role_metaroles => {
+            role                    => [MetaRole],
+            application_to_class    => [ToClass],
+            application_to_role     => [ToRole],
+            application_to_instance => [ToInstance],
+        },
+    );
+}
 
 1;
 
@@ -66,5 +76,9 @@ MooseX::Role::WithOverloading allows you to write a L<Moose::Role> which
 defines overloaded operators and allows those overload methods to be
 composed into the classes/roles/instances it's compiled to, where plain
 L<Moose::Role>s would lose the overloading.
+
+Starting with L<Moose> version 2.1300, this module is no longer necessary, as
+the functionality is available already. In that case,
+C<use MooseX::Role::WithOverloading> behaves identically to C<use Moose::Role>.
 
 =cut

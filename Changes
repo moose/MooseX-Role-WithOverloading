@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - forward-compat mode added for Moose 2.1300, which cores all of
+            this distribution's functionality
 
 0.14      2014-07-30 20:05:32Z
           - Fixed a bug with Perl 5.18+ that caused this module to simply blow
