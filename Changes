@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.15      2014-08-12 05:16:31Z
           - forward-compat mode added for Moose 2.1300, which cores all of
             this distribution's functionality
 
