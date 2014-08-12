@@ -1,7 +1,7 @@
 package Role;
 
 use MooseX::Role::WithOverloading;
-use namespace::clean -except => 'meta';
+use namespace::autoclean 0.16;
 
 use overload
     q{""}    => 'as_string',
