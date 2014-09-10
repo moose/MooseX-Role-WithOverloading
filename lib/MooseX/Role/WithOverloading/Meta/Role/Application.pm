@@ -76,7 +76,7 @@ sub apply_overloading {
         # when using "use overload $op => 'method_name';" overload::nil is
         # installed into the code slot of the glob and the actual method called
         # is determined by the scalar slot of the same glob.
-        if ($meth == \&overload::nil) {
+        if ($meth == \&overload::nil || $meth == \&overload::_nil) {
             my $scalar_sym = qq{\$($op};
             $other->add_package_symbol(
                 $scalar_sym => ${ $role->get_package_symbol($scalar_sym) },
