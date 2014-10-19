@@ -24,8 +24,8 @@ else
     XSLoader::load(
         __PACKAGE__,
         $MooseX::Role::WithOverloading::{VERSION}
-        ? ${ $MooseX::Role::WithOverloading::{VERSION} }
-        : ()
+            ? ${ $MooseX::Role::WithOverloading::{VERSION} }
+            : ()
     );
 
     Moose::Exporter->setup_import_methods(
