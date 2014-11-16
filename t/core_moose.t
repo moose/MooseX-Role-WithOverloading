@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
 
 plan skip_all => 'Moose 2.1300 required for these tests'
     unless eval "require Moose; Moose->VERSION('2.1300'); 1";
