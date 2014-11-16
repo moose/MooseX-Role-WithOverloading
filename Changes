@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.16      2014-11-16 03:50:29Z
           - fix tests that failed due to an interaction between aliased.pm and
             perl 5.21.6
 
