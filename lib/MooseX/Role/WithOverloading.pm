@@ -1,6 +1,6 @@
 package MooseX::Role::WithOverloading;
-# ABSTRACT: Roles which support overloading
-# KEYWORDS: moose extension role operator overload overloading
+# ABSTRACT: (DEPRECATED) Roles which support overloading
+# KEYWORDS: moose extension role operator overload overloading deprecated
 
 use Moose::Role ();
 use Moose::Exporter;
@@ -45,6 +45,12 @@ __END__
 =pod
 
 =for stopwords metaclasses
+
+=head1 DEPRECATION NOTICE
+
+This module is marked as deprecated, as starting with L<Moose> version 2.1300,
+the functionality provided here is now built-in to Moose. You only need to use
+this module if you are using an older L<Moose> (but please upgrade!).
 
 =head1 SYNOPSIS
 

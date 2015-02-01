@@ -1,5 +1,5 @@
 package MooseX::Role::WithOverloading::Meta::Role::Application;
-# ABSTRACT: Role application role for Roles which support overloading
+# ABSTRACT: (DEPRECATED) Role application role for Roles which support overloading
 
 use Moose::Role 1.15;
 use overload ();

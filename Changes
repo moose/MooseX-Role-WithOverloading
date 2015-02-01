@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - mark this distribution as deprecated (now obsolete with modern
+            Moose)
 
 0.16      2014-11-16 03:50:29Z
           - fix tests that failed due to an interaction between aliased.pm and
