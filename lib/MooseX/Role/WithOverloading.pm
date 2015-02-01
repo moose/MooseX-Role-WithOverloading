@@ -40,6 +40,9 @@ else
 }
 
 1;
+__END__
+
+=pod
 
 =for stopwords metaclasses
 
