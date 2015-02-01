@@ -1,5 +1,4 @@
 package MooseX::Role::WithOverloading::Meta::Role;
-# ABSTRACT: Roles which support overloading
 
 use Moose 0.94 ();
 use Moose::Role;
