@@ -1,6 +1,6 @@
-!/.gitignore
 /.ackrc
 /.build/
+!/.gitignore
 /.latest
 /MYMETA.json
 /MYMETA.yml
