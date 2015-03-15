@@ -1,0 +1,7 @@
+
+'make' warning under 5.21.9:
+WithOverloading.xs:31:29: warning: comparison of constant 255 with expression of type 'svtype' is always true [-Wtautological-constant-out-of-range-compare]
+            if (SvTYPE (sv) != SVTYPEMASK
+                ~~~~~~~~~~~ ^  ~~~~~~~~~~
+1 warning generated.
+
