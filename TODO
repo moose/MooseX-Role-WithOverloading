@@ -5,3 +5,8 @@ WithOverloading.xs:31:29: warning: comparison of constant 255 with expression of
                 ~~~~~~~~~~~ ^  ~~~~~~~~~~
 1 warning generated.
 
+
+unexplained test failure:
+http://www.cpantesters.org/cpan/report/5efa3102-d387-11e4-86a3-0ec1e0bfc7aa
+which is the same as at https://rt.cpan.org/Ticket/Display.html?id=103440
+perhaps fixed by Devel::OverloadInfo 0.04?
