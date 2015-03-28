@@ -1,5 +1,7 @@
 package MooseX::Role::WithOverloading::Meta::Role::Composite;
 
+our $VERSION = '0.17';
+
 use Moose::Role;
 use Moose::Util::MetaRole;
 use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToClass';

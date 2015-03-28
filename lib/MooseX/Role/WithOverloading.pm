@@ -2,6 +2,8 @@ package MooseX::Role::WithOverloading;
 # ABSTRACT: (DEPRECATED) Roles which support overloading
 # KEYWORDS: moose extension role operator overload overloading deprecated
 
+our $VERSION = '0.17';
+
 use Moose::Role ();
 use Moose::Exporter;
 use aliased 'MooseX::Role::WithOverloading::Meta::Role', 'MetaRole';
@@ -23,9 +25,7 @@ else
     require XSLoader;
     XSLoader::load(
         __PACKAGE__,
-        $MooseX::Role::WithOverloading::{VERSION}
-            ? ${ $MooseX::Role::WithOverloading::{VERSION} }
-            : ()
+        $VERSION,
     );
 
     Moose::Exporter->setup_import_methods(

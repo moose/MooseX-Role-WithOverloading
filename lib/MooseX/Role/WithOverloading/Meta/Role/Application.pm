@@ -1,6 +1,8 @@
 package MooseX::Role::WithOverloading::Meta::Role::Application;
 # ABSTRACT: (DEPRECATED) Role application role for Roles which support overloading
 
+our $VERSION = '0.17';
+
 use Moose::Role 1.15;
 use overload ();
 use namespace::autoclean;
