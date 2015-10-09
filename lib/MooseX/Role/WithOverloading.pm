@@ -11,7 +11,7 @@ use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToClass';
 use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToRole';
 use aliased 'MooseX::Role::WithOverloading::Meta::Role::Application::ToInstance';
 
-use namespace::clean;
+use namespace::clean 0.19;
 
 # this functionality is built-in, starting with Moose 2.1300
 my $has_core_support = eval { Moose->VERSION('2.1300'); 1 };
