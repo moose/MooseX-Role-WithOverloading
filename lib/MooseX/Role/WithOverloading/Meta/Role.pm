@@ -1,6 +1,6 @@
 package MooseX::Role::WithOverloading::Meta::Role;
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 use Moose 0.94 ();
 use Moose::Role;

@@ -1,6 +1,6 @@
 package MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToRole;
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 use Moose::Role;
 use namespace::autoclean;

@@ -2,7 +2,7 @@ package MooseX::Role::WithOverloading;
 # ABSTRACT: (DEPRECATED) Roles which support overloading
 # KEYWORDS: moose extension role operator overload overloading deprecated
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 use Moose::Role ();
 use Moose::Exporter;
