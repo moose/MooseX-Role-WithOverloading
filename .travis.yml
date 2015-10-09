@@ -31,4 +31,6 @@ install:
 script:
   - perl Makefile.PL
   - make
+  - cpanm Dist::Zilla::Plugin::PromptIfStale
+  - dzil unstale --all | cpanm
   - RELEASE_TESTING=1 prove -b -r -s -j$((SYSTEM_CORES + 1)) $(test-dirs)
