@@ -1,5 +1,10 @@
 # for what versions are available, see:
 # https://github.com/travis-ci/travis-cookbooks/blob/master/ci_environment/perlbrew/attributes/multi.rb
+sudo: false
+addons:
+  apt:
+    packages:
+      - aspell
 language: perl
 perl:
     #- dev
