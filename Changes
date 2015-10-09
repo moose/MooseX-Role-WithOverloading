@@ -1,4 +1,4 @@
-Revision history for {{$dist->name}}
+Revision history for MooseX-Role-WithOverloading
 
 {{$NEXT}}
           - mark this distribution as deprecated (now obsolete with modern
