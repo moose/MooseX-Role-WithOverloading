@@ -2,10 +2,19 @@ use strict;
 use warnings;
 
 use Test::More 0.96;
-use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
+use Test::Deep;
+use Test::Warnings ':all';
 use overload ();
 
 use lib 't/lib';
+
+BEGIN {
+    cmp_deeply(
+        [ warnings { require MooseX::Role::WithOverloading } ],
+        [ re(qr/As of Moose 2.1300, MooseX::Role::WithOverloading is not needed/) ],
+        'got deprecation warning',
+    );
+}
 
 BEGIN { use_ok('OtherClass') }
 
@@ -52,4 +61,5 @@ is(
     'stringification overloading is passed through all roles'
 );
 
+had_no_warnings() if $ENV{AUTHOR_TESTING};
 done_testing();

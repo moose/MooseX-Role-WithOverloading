@@ -2,12 +2,17 @@ use strict;
 use warnings;
 
 use Test::More 0.96;
-use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
+use Test::Warnings ':all';
+use Test::Deep;
 use overload ();
 
 use lib 't/lib';
 
-BEGIN { use_ok('CombiningClass') }
+cmp_deeply(
+    [ warnings { use_ok('CombiningClass') } ],
+    [ re(qr/As of Moose 2.1300, MooseX::Role::WithOverloading is not needed/) ],
+    'got deprecation warning',
+);
 
 ok(CombiningClass->meta->does_role('UnrelatedRole'));
 ok(CombiningClass->meta->does_role('Role'));
@@ -26,4 +31,5 @@ is($foo->message, 'foo');
 my $str = "${foo}";
 is($str, 'foo');
 
+had_no_warnings() if $ENV{AUTHOR_TESTING};
 done_testing();

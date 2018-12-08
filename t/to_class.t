@@ -2,12 +2,17 @@ use strict;
 use warnings;
 
 use Test::More 0.96;
-use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
+use Test::Deep;
+use Test::Warnings ':all';
 use overload ();
 
 use lib 't/lib';
 
-BEGIN { use_ok('SomeClass') }
+cmp_deeply(
+    [ warnings { use_ok('SomeClass') } ],
+    [ re(qr/As of Moose 2.1300, MooseX::Role::WithOverloading is not needed/) ],
+    'got deprecation warning',
+);
 
 ok(SomeClass->meta->does_role('Role'));
 
@@ -23,4 +28,5 @@ is($foo->message, 'foo');
 my $str = "${foo}";
 is($str, 'foo');
 
+had_no_warnings() if $ENV{AUTHOR_TESTING};
 done_testing();

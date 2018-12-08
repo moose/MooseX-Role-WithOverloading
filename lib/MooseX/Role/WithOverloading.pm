@@ -18,6 +18,8 @@ my $has_core_support = eval { Moose->VERSION('2.1300'); 1 };
 
 if ($has_core_support)
 {
+    warnings::warnif('deprecated', 'As of Moose 2.1300, MooseX::Role::WithOverloading is not needed');
+
     Moose::Exporter->setup_import_methods(also => 'Moose::Role');
 }
 else
