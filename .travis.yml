@@ -1,34 +1,39 @@
-# for what versions are available, see:
-# https://github.com/travis-ci/travis-cookbooks/blob/master/ci_environment/perlbrew/attributes/multi.rb
 sudo: false
 addons:
   apt:
     packages:
       - aspell
+      - aspell-en
 language: perl
 perl:
-    #- dev
-    - "blead"
-    #- stable
-    - "5.20"
-    - "5.18"
-    - "5.16"
-    - "5.14"
-    - "5.12"
-    - "5.10"
-    - "5.8"
+  - blead       # builds perl from git
+  - dev         # latest point release
+  - "5.28"
+  - "5.26"
+  - "5.24"
+  - "5.22"
+  - "5.20"
+  - "5.18"
+  - "5.16"
+  - "5.14"
+  - "5.12"
+  - "5.10"
+  - "5.8"
+env:
+  global:
+    - AUTHOR_TESTING=1
+    - AUTOMATED_TESTING=1
+    - RELEASE_TESTING=0
 before_install:
-  - git clone git://github.com/haarg/perl-travis-helper
-  - source perl-travis-helper/init
+  - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
+  - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
   - build-dist
   - cd $BUILD_DIR
 install:
-  - cpan-install YAML
-  - cpan-install ExtUtils::MakeMaker~6.68 --deps
-  - cpan-install --coverage
+  - cpan-install --deps
 script:
   - perl Makefile.PL
   - make
-  - RELEASE_TESTING=1 prove -b -r -s -j$((SYSTEM_CORES + 1)) $(test-dirs)
+  - prove -b -r -s -j$(test-jobs) $(test-files)
