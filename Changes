@@ -1,6 +1,7 @@
 Revision history for MooseX-Role-WithOverloading
 
 {{$NEXT}}
+         - token, ignore
 
 0.17      2015-10-09 02:14:37Z
           - mark this distribution as deprecated (now obsolete with modern
