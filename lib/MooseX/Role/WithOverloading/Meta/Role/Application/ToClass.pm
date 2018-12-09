@@ -8,3 +8,8 @@ use namespace::autoclean;
 with 'MooseX::Role::WithOverloading::Meta::Role::Application';
 
 1;
+__END__
+
+=pod
+
+=cut

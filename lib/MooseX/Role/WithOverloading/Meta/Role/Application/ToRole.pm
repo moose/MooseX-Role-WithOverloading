@@ -28,3 +28,8 @@ around apply => sub {
 };
 
 1;
+__END__
+
+=pod
+
+=cut
