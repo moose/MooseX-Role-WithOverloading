@@ -15,3 +15,8 @@ around apply_overloading => sub {
 };
 
 1;
+__END__
+
+=pod
+
+=cut

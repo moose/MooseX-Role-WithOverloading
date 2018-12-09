@@ -13,3 +13,8 @@ around composition_class_roles => sub {
 };
 
 1;
+__END__
+
+=pod
+
+=cut

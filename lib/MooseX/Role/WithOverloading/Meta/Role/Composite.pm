@@ -23,3 +23,8 @@ around apply_params => sub {
 };
 
 1;
+__END__
+
+=pod
+
+=cut
